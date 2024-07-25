@@ -32,35 +32,67 @@ layout = [
 
 window = sg.Window('Calculadora de IMC', layout=layout)
 
+
+def calculo_imc(peso, altura):
+    imc = peso / (altura * altura)
+    imc_formatado = f'{imc:.2f}'
+    imc_formatado = float(imc_formatado)
+    return imc_formatado
+
+
+def categoria():
+    if calculo_imc(peso, altura) < 16:
+        categoria = 'Muito Abaixo do Peso'
+    elif calculo_imc(peso, altura) >= 17 and calculo_imc(peso, altura) < 18.5:
+        categoria = 'Abaixo do Peso'
+    elif calculo_imc(peso, altura) >= 18.5 and calculo_imc(peso, altura) <= 24.9:
+        categoria = 'Peso Normal'
+    elif calculo_imc(peso, altura) >= 25 and calculo_imc(peso, altura) <= 29.9:
+        categoria = 'Acima do Peso'
+    elif calculo_imc(peso, altura) >= 30 and calculo_imc(peso, altura) <= 34.9:
+        categoria = 'Obesidade I'
+    elif calculo_imc(peso, altura) >= 35 and calculo_imc(peso, altura) <= 39.9:
+        categoria = 'Obesidade II (Severa)'
+    elif calculo_imc(peso, altura) >= 40:
+        categoria = 'Obesidade III (Mórbida)'
+    return categoria
+
+
 while True:
     event, values = window.read()
     if event == sg.WIN_CLOSED:
         break
+
     elif event == 'Calcular IMC':
         peso = int(values['peso'])
         altura = float(values['altura'])
-        imc = peso / (altura * altura)
-        imc_formatado = f'{imc:.2f}'
-        imc_formatado = float(imc_formatado)
-        window['imc'].update(imc_formatado)
-        if imc_formatado < 16:
+
+        window['imc'].update(calculo_imc(peso, altura))
+
+        if 'Muito Abaixo do Peso' in categoria():
             window['categoria'].update('Muito Abaixo do Peso')
             window['categoria'].update(text_color='grey')
-        elif imc_formatado >= 17 and imc_formatado < 18.5:
+
+        elif 'Abaixo do Peso' in categoria():
             window['categoria'].update('Abaixo do Peso')
             window['categoria'].update(text_color='grey')
-        elif imc_formatado >= 18.5 and imc_formatado <= 24.9:
+
+        elif 'Peso Normal' in categoria():
             window['categoria'].update('Peso Normal')
             window['categoria'].update(text_color='black')
-        elif imc_formatado >= 25 and imc_formatado <= 29.9:
+
+        elif 'Acima do Peso' in categoria():
             window['categoria'].update('Acima do Peso')
             window['categoria'].update(text_color='red')
-        elif imc_formatado >= 30 and imc_formatado <= 34.9:
+
+        elif 'Obesidade I' in categoria():
             window['categoria'].update('Obesidade I')
             window['categoria'].update(text_color='red')
-        elif imc_formatado >= 35 and imc_formatado <= 39.9:
+
+        elif 'Obesidade II (Severa)' in categoria():
             window['categoria'].update('Obesidade II (Severa)')
             window['categoria'].update(text_color='red')
-        elif imc_formatado >= 40:
+
+        elif 'Obesidade III (Mórbida)' in categoria():
             window['categoria'].update('Obesidade III (Mórbida)')
             window['categoria'].update(text_color='red')
