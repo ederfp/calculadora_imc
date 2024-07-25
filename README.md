@@ -1,4 +1,4 @@
-### Calculadora de IMC
+# Calculadora de IMC
 Uma calculadora de Índice de Massa Corporal (IMC) desenvolvida em Python utilizando o PYSimpleGUI como interface gráfica.
 
 ## Funcionalidade
@@ -6,6 +6,6 @@ Uma calculadora de Índice de Massa Corporal (IMC) desenvolvida em Python utiliz
 * Exibe o resultado do IMC.
 * Mostra a categoria correspondente  ao IMC calculado.
 
-## Requirements
+### Requirements
 * Python 3.10.12
 * PYSimpleGUI
