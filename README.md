@@ -1,11 +1,11 @@
-<h1>Calculadora de IMC</h1>
+### Calculadora de IMC
 Uma calculadora de Índice de Massa Corporal (IMC) desenvolvida em Python utilizando o PYSimpleGUI como interface gráfica.
 
-<h2>Funcionalidade</h2>
-<li> Calcular o IMC com base na altura e peso </li>
-<li> Exibe o resultado do IMC </li>
-<li> Mostra a categoria correspondente  ao IMC calculado </li>
+## Funcionalidade
+* Calcular o IMC com base na altura e peso.
+* Exibe o resultado do IMC.
+* Mostra a categoria correspondente  ao IMC calculado.
 
-<h3>Requirements</h3>
-<li> Python 3.10.12 </li>
-<li> PYSimpleGUI </li>
+## Requirements
+* Python 3.10.12
+* PYSimpleGUI
