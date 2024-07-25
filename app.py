@@ -70,29 +70,29 @@ while True:
         window['imc'].update(calculo_imc(peso, altura))
 
         if 'Muito Abaixo do Peso' in categoria():
-            window['categoria'].update('Muito Abaixo do Peso')
+            window['categoria'].update(categoria())
             window['categoria'].update(text_color='grey')
 
         elif 'Abaixo do Peso' in categoria():
-            window['categoria'].update('Abaixo do Peso')
+            window['categoria'].update(categoria())
             window['categoria'].update(text_color='grey')
 
         elif 'Peso Normal' in categoria():
-            window['categoria'].update('Peso Normal')
+            window['categoria'].update(categoria())
             window['categoria'].update(text_color='black')
 
         elif 'Acima do Peso' in categoria():
-            window['categoria'].update('Acima do Peso')
+            window['categoria'].update(categoria())
             window['categoria'].update(text_color='red')
 
         elif 'Obesidade I' in categoria():
-            window['categoria'].update('Obesidade I')
+            window['categoria'].update(categoria())
             window['categoria'].update(text_color='red')
 
         elif 'Obesidade II (Severa)' in categoria():
-            window['categoria'].update('Obesidade II (Severa)')
+            window['categoria'].update(categoria())
             window['categoria'].update(text_color='red')
 
         elif 'Obesidade III (Mórbida)' in categoria():
-            window['categoria'].update('Obesidade III (Mórbida)')
+            window['categoria'].update(categoria())
             window['categoria'].update(text_color='red')
