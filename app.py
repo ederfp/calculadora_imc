@@ -1,22 +1,3 @@
-'''
-1. Interface Gráfica:
-○ Criar uma janela principal.
-○ Adicionar campos de entrada para o peso (em kg) e altura (em metros(exemplo:
-1.70, 1.80)
-○ Adicionar um botão para calcular o IMC.
-○ Adicionar um campo para exibir o resultado do IMC.
-○ Adicionar um campo para exibir a categoria do IMC
-i. Muito abaixo do peso
-ii. Abaixo do peso
-iii. Peso normal
-iv. Acima do peso
-v. Obesidade I
-vi. Obesidade II
-vii. Obesidade III
-○ Personalize as cores da categoria para que tudo fique mais intuitivo(coloque
-cores diferentes para cada nível
-i. (ex:vá de branco para vermelho, de acordo com o nível de obesidade)
-'''
 import PySimpleGUI as sg
 
 sg.theme('Reddit')
@@ -34,6 +15,9 @@ window = sg.Window('Calculadora de IMC', layout=layout)
 
 
 def calculo_imc(peso, altura):
+    '''
+    Função que recebe o peso e altura do usuário e retorna o IMC.
+    '''
     imc = peso / (altura * altura)
     imc_formatado = f'{imc:.2f}'
     imc_formatado = float(imc_formatado)
@@ -41,6 +25,9 @@ def calculo_imc(peso, altura):
 
 
 def categoria():
+    '''
+    Função que recebe o peso e altura da função calculo_imc e retorna a categoria.
+    '''
     if calculo_imc(peso, altura) < 16:
         categoria = 'Muito Abaixo do Peso'
     elif calculo_imc(peso, altura) >= 17 and calculo_imc(peso, altura) < 18.5:
